@@ -23,10 +23,12 @@ public class HotDrinkVendingMach extends VendingMachine{
 
     public Product getProduct(String name, int temp, float volume) {
         for(Product product : products){
-            HotDrink drink = (HotDrink) product;
-            if(drink.getName().equals(name) && drink.getVolume() == volume && drink.getTemp() == temp ){
-                products.remove(product);
-                return product;
+            if(product.getName().equals(name)){
+                HotDrink drink = (HotDrink) product;
+                if(drink.getVolume() == volume && drink.getTemp() == temp){
+                    products.remove(product);
+                    return product;
+                }
             }
         }
 
